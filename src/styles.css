@@ -3,6 +3,11 @@
 @import url(https://fonts.googleapis.com/icon?family=Roboto);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
+* {
+    margin: unset;
+    padding: unset;
+}
+
 body {
     font-family: Roboto;
 }
@@ -15,11 +20,6 @@ body {
     text-align: center;
 }
 
-.color-primary {
-    background: #061570;
-    color: #fff;
-}
-
 @media (min-width: 576px) { 
     .container {
         max-width: 550px;
@@ -29,11 +29,5 @@ body {
 @media (min-width: 768px) { 
     .container {
         max-width: 740px;
-    }
-}
-
-@media (min-width: 992px) { 
-    .container {
-        max-width: 960px;
     }
 }
