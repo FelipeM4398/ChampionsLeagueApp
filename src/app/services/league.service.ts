@@ -20,4 +20,12 @@ export class LeagueService {
   getLeague(): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'competitions/CL', httpOptions);
   }
+
+  getAllTeams(): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'competitions/CL/teams', httpOptions);
+  }
+
+  getStandings(): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'competitions/CL/standings?season', httpOptions);
+  }
 }

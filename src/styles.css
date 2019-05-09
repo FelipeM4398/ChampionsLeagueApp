@@ -6,3 +6,34 @@
 body {
     font-family: Roboto;
 }
+
+.container {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.color-primary {
+    background: #061570;
+    color: #fff;
+}
+
+@media (min-width: 576px) { 
+    .container {
+        max-width: 550px;
+    }
+}
+
+@media (min-width: 768px) { 
+    .container {
+        max-width: 740px;
+    }
+}
+
+@media (min-width: 992px) { 
+    .container {
+        max-width: 960px;
+    }
+}

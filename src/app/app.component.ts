@@ -8,20 +8,8 @@ import { LeagueService } from './services/league.service';
 })
 export class AppComponent implements OnInit {
 
-  league: any;
-  loaded = false;
-
-  constructor(private apiService: LeagueService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getLeague();
-  }
-
-  getLeague() {
-    this.apiService.getLeague().subscribe(
-      data => this.league = data,
-      error => console.log(error),
-      () => { this.loaded = true; console.log(this.league); }
-    );
   }
 }
