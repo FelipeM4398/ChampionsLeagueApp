@@ -1,0 +1,10 @@
+.title {
+    background: url("../../../assets/img/background-1.jpg") 100% 70%;
+    background-size: cover;
+    color: #fff;
+    font-size: 35px;
+    padding: 70px 0;
+    text-align: center;
+    text-shadow: #000 0 2px;
+    margin-bottom: 20px; 
+}

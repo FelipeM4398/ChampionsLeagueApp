@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { MatButtonModule } from '@angular/material';
 import { GroupsComponent } from './components/groups/groups.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    GroupsComponent
+    GroupsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, MatButtonModule,
