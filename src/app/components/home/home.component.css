@@ -1,10 +1,23 @@
-.title {
-    background: url("../../../assets/img/background-1.jpg") 100% 70%;
-    background-size: cover;
-    color: #fff;
-    font-size: 35px;
-    padding: 70px 0;
+.finalTeamLogo {
+    height: var(--size-final-team);
+}
+
+.container-final-match {
     text-align: center;
-    text-shadow: #000 0 2px;
-    margin-bottom: 20px; 
+    margin: 20px 0;
+}
+
+.header-final-match {
+    padding: 10px 0;
+}
+
+.content-final-match {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-final-match .results {
+    font-size: 2rem;
+    margin: 0 1rem;
 }

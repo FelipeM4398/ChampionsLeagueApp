@@ -1,16 +1,34 @@
-<header *ngIf="loaded">
-  <div class="header container">
-    <div class="logo">
-        <img [src]="league.emblemUrl" width="100">
-    </div>
-    <div class="menu">
-      <div class="buttons">
-        <button mat-button color="primary" routerLink="/home">Home</button>
-        <button mat-button color="primary">Groups</button>
-        <button mat-button color="primary">Teams</button>
-        <button mat-button color="primary">Scorers</button>
-        <button mat-button color="primary">Matches</button>
+<mat-sidenav-container>
+
+  <mat-sidenav #snav [fixedInViewport]="mobileQuery.matches">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home" >Home</a>
+      <a mat-list-item routerLink="." >Groups</a>
+      <a mat-list-item routerLink="." >Teams</a>
+      <a mat-list-item routerLink="." >Scorers</a>
+      <a mat-list-item routerLink="." >Matches</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header *ngIf="loaded">
+      <div class="header container">
+        <div class="logo">
+            <img class="logo-img" [src]="league.emblemUrl">
+        </div>
+        <div class="menu">
+          <div *ngIf="!mobileQuery.matches" class="buttons hide-on-small">
+            <button mat-button color="primary" routerLink="/home">Home</button>
+            <button mat-button color="primary">Groups</button>
+            <button mat-button color="primary">Teams</button>
+            <button mat-button color="primary">Scorers</button>
+            <button mat-button color="primary">Matches</button>
+          </div>
+          <button mat-icon-button *ngIf="mobileQuery.matches" (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        </div>  
       </div>
-    </div>
-  </div>
-</header>
+    </header> 
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>

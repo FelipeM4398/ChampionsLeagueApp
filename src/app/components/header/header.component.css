@@ -12,5 +12,5 @@
 }
 
 .menu button {
-    color: #0E2050;
+    color: var(--color-principal);
 }

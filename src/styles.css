@@ -8,6 +8,20 @@
     padding: unset;
 }
 
+:root {
+    --color-principal: #0E2050;
+    --font-size-title: 2rem;
+    --size-logo: 6.25rem;
+    --size-final-team: 6.25rem;
+}
+
+@media (min-width: 0rem) { 
+    :root {
+        --font-size-title: 1.8rem;
+        --size-logo: 5rem;
+    }
+}
+
 body {
     font-family: Roboto;
 }
@@ -16,18 +30,35 @@ body {
     margin: auto;
 }
 
+.logo-img {
+    width: var(--size-logo);
+}
+
+.title {
+    background: url("./assets/img/background-1.jpg") center 70%;
+    background-size: cover;
+    color: #fff;
+    font-size: var(--font-size-title);
+    padding: 2rem 0;
+    text-align: center;
+    text-shadow: #000 0 2px;
+    margin-bottom: 20px; 
+}
+
 .text-center {
     text-align: center;
 }
 
-@media (min-width: 576px) { 
+@media (min-width: 0rem) { 
     .container {
-        max-width: 550px;
+        width: 90%;
+        max-width: 36rem;
     }
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 48rem) { 
     .container {
-        max-width: 740px;
+        width: 90%;
+        max-width: 48rem;
     }
 }

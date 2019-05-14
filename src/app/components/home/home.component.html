@@ -2,14 +2,31 @@
   <h1>{{title}}</h1>
 </div>
 <div class="container">
-  <h2>Final</h2>
-  <div class="container-final-match">
-    <div class="header-final-match"></div>
-    <div class="content-final-match">
-      <div class="homeTeam"></div>
-      <div class="results"></div>
-      <div class="awayTeam"></div>
+  <h2 class="text-center">Final</h2>
+  <div *ngIf="loadedMatch" class="container-final-match">
+    <div class="header-final-match">
+      {{ finalMatch.match.venue }}<br>
+      <small>{{ finalMatch.match.utcDate | date }}</small>
     </div>
-    <div class="footer-final-match"></div>
+    <div *ngIf="loadedHomeTeam && loadedAwayTeam" class="content-final-match">
+      <div class="homeTeam">
+        <img class="finalTeamLogo" [src]="homeTeam.crestUrl"><br>
+        {{homeTeam.shortName}}
+      </div>
+      <div class="results">
+        <div *ngIf="finalMatch.match.status === 'SCHEDULED'">
+          Vs
+        </div>
+        <div *ngIf="!(finalMatch.match.status === 'SCHEDULED')">
+          {{finalMatch.match.score.fullTime.homeTeam}}
+          -
+          {{finalMatch.match.score.fullTime.homeTeam}}
+        </div>
+      </div>
+      <div class="awayTeam">
+        <img class="finalTeamLogo" [src]="awayTeam.crestUrl"><br>
+        {{ awayTeam.shortName }}
+      </div>
+    </div>
   </div>
 </div>
