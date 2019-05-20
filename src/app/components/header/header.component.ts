@@ -7,10 +7,9 @@ import { MediaMatcher } from '@angular/cdk/layout';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
 
-  league: any;
-  loaded = false;
+  league = JSON.parse(localStorage.getItem('leagueData'));
   mobileQuery: MediaQueryList;
   private mobileQueryListener: () => void;
 
@@ -20,17 +19,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.getLeague();
-  }
-
-  ngOnDestroy() {
+    if (!this.league) {
+      this.getLeague();
+    }
   }
 
   getLeague() {
     this.apiService.getLeague().subscribe(
-      data => this.league = data,
+      data => localStorage.setItem('leagueData', JSON.stringify(data)),
       error => console.log(error),
-      () => { this.loaded = true; console.log(this.league); }
     );
   }
 

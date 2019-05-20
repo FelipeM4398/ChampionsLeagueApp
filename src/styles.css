@@ -8,6 +8,10 @@
     padding: unset;
 }
 
+.mat-drawer-container {
+    height: 100vh;
+}
+
 :root {
     --color-principal: #0E2050;
     --font-size-title: 2rem;
@@ -28,6 +32,8 @@ body {
 
 .container {
     margin: auto;
+    width: 90%;
+        max-width: 40rem;
 }
 
 .logo-img {
@@ -39,7 +45,7 @@ body {
     background-size: cover;
     color: #fff;
     font-size: var(--font-size-title);
-    padding: 2rem 0;
+    padding: 4rem 0;
     text-align: center;
     text-shadow: #000 0 2px;
     margin-bottom: 20px; 
@@ -49,16 +55,12 @@ body {
     text-align: center;
 }
 
-@media (min-width: 0rem) { 
+@media (max-width: 48rem) { 
     .container {
         width: 90%;
         max-width: 36rem;
     }
-}
-
-@media (min-width: 48rem) { 
-    .container {
-        width: 90%;
-        max-width: 48rem;
+    .title {
+        padding: 2rem 0;
     }
 }

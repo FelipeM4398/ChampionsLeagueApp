@@ -4,7 +4,7 @@
 
 .container-final-match {
     text-align: center;
-    margin: 20px 0;
+    margin: 1rem 0;
 }
 
 .header-final-match {
@@ -19,5 +19,44 @@
 
 .content-final-match .results {
     font-size: 2rem;
-    margin: 0 1rem;
+    margin: 0 2rem;
+}
+
+.header-match {
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 10px;
+    padding-bottom: 10px; 
+}
+
+@media (max-width: 40rem) { 
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mat-card-avatar {
+    background-size: cover;
+    border-radius: unset;
+    width: 80px;
+    height: 80px;
+}
+
+.card-scorer {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-scorer ::ng-deep .mat-card-header-text {
+    margin-right: unset;
+}
+
+.card-scorer .mat-card-subtitle {
+    margin-bottom: unset;
 }

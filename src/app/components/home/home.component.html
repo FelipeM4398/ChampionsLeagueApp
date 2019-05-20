@@ -1,32 +1,47 @@
 <div class="title">
-  <h1>{{title}}</h1>
+  <h1>UEFA Champions League</h1>
 </div>
 <div class="container">
-  <h2 class="text-center">Final</h2>
-  <div *ngIf="loadedMatch" class="container-final-match">
-    <div class="header-final-match">
-      {{ finalMatch.match.venue }}<br>
-      <small>{{ finalMatch.match.utcDate | date }}</small>
-    </div>
-    <div *ngIf="loadedHomeTeam && loadedAwayTeam" class="content-final-match">
-      <div class="homeTeam">
-        <img class="finalTeamLogo" [src]="homeTeam.crestUrl"><br>
-        {{homeTeam.shortName}}
-      </div>
-      <div class="results">
-        <div *ngIf="finalMatch.match.status === 'SCHEDULED'">
-          Vs
-        </div>
-        <div *ngIf="!(finalMatch.match.status === 'SCHEDULED')">
-          {{finalMatch.match.score.fullTime.homeTeam}}
-          -
-          {{finalMatch.match.score.fullTime.homeTeam}}
-        </div>
-      </div>
-      <div class="awayTeam">
-        <img class="finalTeamLogo" [src]="awayTeam.crestUrl"><br>
-        {{ awayTeam.shortName }}
-      </div>
-    </div>
-  </div>
+
+  <mat-card *ngIf="homeTeam && awayTeam && finalMatch" class="card-match">
+      <mat-card-header class="text-center header-match">
+        <mat-card-title>Final</mat-card-title>
+        <mat-card-subtitle>
+          <p>{{ finalMatch.match.venue }}</p>
+          <p>{{ finalMatch.match.utcDate | date }}</p>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="content-final-match text-center">
+          <div class="homeTeam">
+            <img class="finalTeamLogo" [src]="homeTeam.crestUrl">
+            <h3>{{homeTeam.shortName}}</h3>
+          </div>
+          <div class="results">
+            <div *ngIf="finalMatch.match.status === 'SCHEDULED'">
+              Vs
+            </div>
+            <div *ngIf="!(finalMatch.match.status === 'SCHEDULED')">
+              {{finalMatch.match.score.fullTime.homeTeam}}
+              -
+              {{finalMatch.match.score.fullTime.homeTeam}}
+            </div>
+          </div>
+          <div class="awayTeam">
+            <img class="finalTeamLogo" [src]="awayTeam.crestUrl"><br>
+            <h3>{{awayTeam.shortName}}</h3>
+          </div>
+      </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="teamScorer" class="card-scorer">
+    <mat-card-header>
+      <div [ngStyle]="{'background-image': 'url('+teamScorer.crestUrl+')'}" mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{maxScorer.player.name}}</mat-card-title>
+      <mat-card-subtitle>
+        <p>Máximo goleador</p>
+        <p>{{maxScorer.numberOfGoals}} goles</p>
+        <p>{{maxScorer.team.name}}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
 </div>

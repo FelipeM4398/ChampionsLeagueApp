@@ -6,13 +6,8 @@ const httpOptions = {
   headers: new HttpHeaders({
     'X-Auth-Token': 'f77c983c3bfa49689742d57e5d060e6f'
   }),
+  params: new HttpParams()
 };
-
-const headers = new HttpHeaders({
-  'X-Auth-Token': 'f77c983c3bfa49689742d57e5d060e6f'
-});
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -39,11 +34,18 @@ export class LeagueService {
     return this.http.get<any>(`${this.apiUrl}competitions/CL/standings`, httpOptions);
   }
 
-  getMatchs(season?: string, group?: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}competitions/CL/matches?season=${season}&group=${group}`, httpOptions);
+  getMatchs(stage?: string): Observable<any> {
+    httpOptions.params = httpOptions.params.set('stage', stage);
+    return this.http.get<any>(`${this.apiUrl}competitions/CL/matches`, httpOptions);
   }
 
   getMatchById(id: number): Observable<any> {
+    httpOptions.params = new HttpParams();
     return this.http.get<any>(`${this.apiUrl}matches/${id}`, httpOptions);
+  }
+
+  getScorers(): Observable<any> {
+    httpOptions.params = new HttpParams();
+    return this.http.get<any>(`${this.apiUrl}competitions/CL/scorers`, httpOptions);
   }
 }
