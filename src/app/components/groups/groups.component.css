@@ -1,0 +1,15 @@
+.mat-card-avatar {
+    width: 20px;
+    height: 20px;
+    background-size: cover; 
+}
+
+table {
+    width: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}

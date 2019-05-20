@@ -30,7 +30,8 @@ export class LeagueService {
     return this.http.get<any>(`${this.apiUrl}teams/${id}`, httpOptions);
   }
 
-  getStandings(): Observable<any> {
+  getStandings(type: string): Observable<any> {
+    httpOptions.params = httpOptions.params.set('standingType', type);
     return this.http.get<any>(`${this.apiUrl}competitions/CL/standings`, httpOptions);
   }
 

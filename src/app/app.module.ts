@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
-import { MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MatCardModule, MatTableModule } from '@angular/material';
 import { GroupsComponent } from './components/groups/groups.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -17,7 +17,7 @@ import { HomeComponent } from './components/home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, HttpClientModule, MatButtonModule,
+    BrowserModule, BrowserAnimationsModule, HttpClientModule, MatButtonModule, MatTableModule,
     AppRoutingModule, MatIconModule, MatSidenavModule, MatListModule, MatCardModule, MatIconModule
   ],
   providers: [],
