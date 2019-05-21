@@ -1,0 +1,27 @@
+.container-final-match {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.header-final-match {
+    padding: 10px 0;
+}
+
+.content-final-match {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-final-match .results {
+    font-size: 2rem;
+}
+
+.header-match {
+    justify-content: center;
+}
+
+.card-match {
+    margin-bottom: 10px;
+}

@@ -23,6 +23,7 @@ export class LeagueService {
   }
 
   getAllTeams(): Observable<any> {
+    httpOptions.params = new HttpParams();
     return this.http.get<any>(`${this.apiUrl}competitions/CL/teams`, httpOptions);
   }
 

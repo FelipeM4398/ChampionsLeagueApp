@@ -21,8 +21,7 @@ export class GroupsComponent implements OnInit {
 
   getStandings() {
     this.leagueService.getStandings('TOTAL').subscribe(
-      data => { console.log(data.standings);
-                localStorage.setItem('standings', JSON.stringify(data.standings)); }
+      data => { localStorage.setItem('standings', JSON.stringify(data.standings)); }
     );
   }
 

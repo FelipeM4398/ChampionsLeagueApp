@@ -1,0 +1,16 @@
+<div class="title">
+  <h1>Scorers</h1>
+</div>
+<div class="container">
+    <mat-list>
+
+      <mat-list-item *ngFor="let scorer of scorers">
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+        <h4 mat-line><strong>{{scorer.player.name}}</strong></h4>
+        <p mat-line>{{scorer.team.name}}</p>
+        <p mat-line>{{scorer.numberOfGoals}} Goals</p>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      
+    </mat-list>
+</div>

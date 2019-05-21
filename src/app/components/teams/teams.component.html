@@ -1,0 +1,14 @@
+<div class="title">
+  <h1>Teams</h1>
+</div>
+<div class="container">
+  <mat-card *ngFor="let team of teams">
+    <div class="team-container">
+      <img [src]="team.crestUrl" height="50">
+      <div>
+        <h4>{{team.name}}</h4>
+        <p>{{team.area.name}}</p>
+      </div>
+    </div>
+  </mat-card>
+</div>
