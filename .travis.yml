@@ -14,7 +14,6 @@ cache:
     - node_modules
 
 script:
-  - ng lint
   - ng build --prod
   
 deploy:
